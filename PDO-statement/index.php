@@ -11,9 +11,3 @@ $u->excluir(12); //teste excluir
 //$res = $u->selecionar(2); //peguei id 1 e vai guardar os results na var $res
 
 //print_r($res); //p/ ver o result na tela
-
-/*
-  Created on : 22/03/2017, 13:07:22
-  Author     : Renata Kilian
- */
-?>
