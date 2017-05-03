@@ -1,6 +1,6 @@
 <?php
 
-	$dsn = "mysql:dbname=frases;host=localhost";
+	$dsn = "mysql:dbname=frases;host=localhost;charset=utf8"; //Aqui você especifica o charset
 	$dbuser = "root";
 	$dbpass = "";
 

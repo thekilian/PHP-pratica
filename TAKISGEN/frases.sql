@@ -20,6 +20,15 @@ SET time_zone = "+00:00";
 -- Database: `frases`
 --
 
+DROP SCHEMA IF EXISTS `frases` ;
+
+-- -----------------------------------------------------
+-- Schema frases
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `frases` DEFAULT CHARACTER SET utf8 ;
+USE `frases` ;
+
+
 -- --------------------------------------------------------
 
 --
