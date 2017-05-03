@@ -22,17 +22,30 @@ require 'config.php';
 <!--DB: frases/lista/id, frase, autor-->
 
 <?php
-	//mysqli_set_charset($connect, 'utf8');
+			
+	// Só essa query é suficiente, mas tem que adicionar o restante dos dados
+	$sql = "SELECT id, frase, autor FROM `lista` ORDER BY RAND() LIMIT 1"; // acertando a query
+	$result = $pdo->query($sql); //não reatribua valores às mesmas variáveis
 	
-	$sql = "SELECT COUNT(id) AS num_frases FROM `lista`";
-	$sql = $pdo->query($sql);
+	/*
+		Aqui ele pede pro PDO buscar os dados do objeto retornado
+		como um array associativo
+	*/
+	$chosen_one = $result->fetch(PDO::FETCH_ASSOC);
+
+	// descomente essa linha abaixo para ver como vieram os dados
+	//var_dump($chosen_one); 
 	
-	if($sql->rowCount() > 0) {
-		$sql = "SELECT id AS lista FROM `lista` ORDER BY RAND() LIMIT 1";
-		$sql = $pdo->query($sql);
-		
-		echo $lista['frase']."<br/>".$lista['autor'];
-	}
+	/*
+	Um jeito mais elegante de escrever strings no PHP
+	sem ter que usar um monte de pontos.
+
+	Só funciona se a string não tiver aspas. Isso não funcionaria aqui por exemplo:
+
+	"<span class="{$variavel}"> Algum texto </span>
+	*/
+	echo "{$chosen_one['frase']} <br> <strong>{$chosen_one['autor']}</strong>"; 
+	
 
 ?>
 
