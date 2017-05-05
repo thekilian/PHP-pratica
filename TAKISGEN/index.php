@@ -53,22 +53,11 @@ require 'config.php';
 	<br><br>
 
 	<div class="form-group">
-		<form method="POST" action="">
+		<form method="POST" action="insert.php">
 			<input class="form-control" type="text" name="frase" placeholder="Digite a frase" required=""><br>
 			<input class="form-control" type="text" name="autor" placeholder="Digite o nome do autor" required=""><br>
 			<button class="btn btn-success btn-block">Adicionar frase</button>
 		</form>
-		
-<?php
-	$frase = $_POST['frase'];
-	$autor = $_POST['autor'];
-		
-	$sql = "INSERT INTO `lista` VALUES ($frase, $autor)";
-	$ins = $pdo->query($sql);
-		
-	echo "{$ins['frase']} <br> <strong>{$ins['autor']}</strong>"; 
-?>
-		
 	</div>
 
 </div>
