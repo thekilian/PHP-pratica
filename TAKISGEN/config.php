@@ -6,6 +6,6 @@
 
 	try {
 		$pdo = new PDO($dsn, $dbuser, $dbpass);
-	} catch(PODException $e) {
+	} catch(PDOException $e) {
 		echo "Falhou a conexão: ".$e->getMessage();
 	}
