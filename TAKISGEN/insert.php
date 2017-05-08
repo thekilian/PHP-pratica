@@ -4,8 +4,8 @@
 	$frase = $_POST['frase'];
 	$autor = $_POST ['autor'];
 
-	$sql = "INSERT INTO `lista` VALUES ($frase, $autor)";
-	$ins = $pdo->query($sql);
+	$sql = "INSERT INTO `lista` (`id`, `frase`, `autor`) VALUES (NULL, '{$frase}', '{$autor}')";
+	$pdo->query($sql);
 
 	echo "Frase inserida com sucesso!";
 	echo "<br/>";
