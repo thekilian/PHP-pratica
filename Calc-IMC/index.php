@@ -67,6 +67,8 @@ if($BMI < 15.0) {
 }
 
 echo "BMI Category: ".$category;
+echo "<br/><br/>";
+echo "<a href='index.php'>Voltar</a>";
 exit;
 
 ?>
