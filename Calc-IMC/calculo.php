@@ -23,7 +23,24 @@ Your height in meter:1.86
 Your weight in kilogram:64
 Your BMI is 18.499
 BMI Category:normal wight
+
+<?php
+
+$BMI=0;
+
+echo "Your height in meter:";
+$height = trim(fgets(STDIN));
+
+echo "Your weight in kilogram:";
+$weight = trim(fgets(STDIN));
+
+  ///{write down your logic here
+ ///}
+
+exit;
+?>
 */
+
 $BMI = 0;
 
 $height = $_POST['height'];
@@ -34,7 +51,6 @@ $weight = $_POST['weight'];
 echo "Your weight in kilogram is: ".$weight;
 echo "<br/>";
 
-///{write down your logic here}
 $mult = $height * $height;
 $BMI = $weight / $mult;
 echo "Your BMI is ".$BMI;
