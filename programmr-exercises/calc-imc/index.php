@@ -9,13 +9,15 @@
 <body>
 	<div class="container">
 		<h2>Calculadora de IMC</h2>
-		<hr/>
+		<hr>
 		
 		<form method="POST" action="calculo.php">
 			<div class="form-group">
+				<label>Please type your height in cm</label>
 				<input class="form-control" type="number" name="height" placeholder="Please type your height">
 			</div>
 			<div class="form-group">
+				<label>Please type your weight in kg</label>
 				<input class="form-control" type="number" name="weight" placeholder="Please type your weight">
 			</div>
 				<button class = "btn btn-success btn-block">Calculate</button>
