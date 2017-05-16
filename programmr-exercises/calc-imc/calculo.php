@@ -55,7 +55,7 @@ echo "<br/>";
 $mult = $height * $height;
 
 $BMI = $weight / $mult;
-echo "Your BMI is ".$BMI;
+echo "Your BMI is ".number_format($BMI, 2); // Formatação básica de decimais
 echo "<br>";
 
 // Testei seu cálculo com outro calculador de IMC, e tá funcionando!
