@@ -39,7 +39,7 @@ exit;
 $BMI = 0;
 
 //$height = $_POST['height'];
-//$height = 1.84; //aqui tem um debug pra testar se o cálculo tá funcionando
+$height = 1.84; //aqui tem um debug pra testar se o cálculo tá funcionando
 
 echo "Your height in meters is: ".$height;
 echo "<br/>";
@@ -67,25 +67,41 @@ Aqui eu testo valor a valor, sobrescrevendo o cálculo acima
 simulando CADA RESULTADO pra ver exatamente onde está o erro.
 
 */
-$BMI = 15.1; // Variável sobrescrita apenas para debugar
+$BMI = 40.0; // Variável sobrescrita apenas para debugar
 
 if($BMI < 15.0) {
+	
 	$category = "very severely underweight";
-} elseif($BMI <= 15.0 && $BMI >= 16.0) { // <- ele deveria entrar aqui. ONDE ESTÁ O MISTÉRIO?
+
+} elseif($BMI >= 15.0 && $BMI <= 16.0) { 
+
 	$category = "severely underweight";
-} elseif($BMI <= 16.1 && $BMI >= 18.4) {
+
+} elseif($BMI >= 16.1 && $BMI <= 18.4) {
+
 	$category = "underweight";
-} elseif($BMI <= 18.5 && $BMI >= 24.9) {
+
+} elseif($BMI >= 18.5 && $BMI <= 24.9) {
+
 	$category = "normal weight";
-} elseif($BMI <= 25.0 && $BMI >= 29.9) {
+
+} elseif($BMI >= 25.0 && $BMI <= 29.9) {
+
 	$category = "overweight";
-} elseif($BMI <= 30.0 && $BMI >= 34.9) {
+
+} elseif($BMI >= 30.0 && $BMI <= 34.9) {
+
 	$category = "moderately obese";
-} elseif($BMI <= 35.0 && $BMI >= 39.9) {
+
+} elseif($BMI >= 35.0 && $BMI <= 39.9) {
+
 	$category = "severely obese";
-} elseif($BMI > 40.0) {
+
+} elseif($BMI >= 40.0) {
+
 	$category = "very severely (or 'morbidly') obese";
 }
+
 echo "BMI Category: ".$category;
 echo "<br/><br/>";
 echo "<a href='index.php'>Voltar</a>";
