@@ -38,11 +38,14 @@ exit;
 
 $BMI = 0;
 
-$height = $_POST['height'];
-echo "Your height in meter is: ".$height;
+//$height = $_POST['height'];
+//$height = 1.84; //aqui tem um debug pra testar se o cálculo tá funcionando
+
+echo "Your height in meters is: ".$height;
 echo "<br/>";
 
-$weight = $_POST['weight'];
+//$weight = $_POST['weight'];
+$weight = 70; //aqui também
 echo "Your weight in kilogram is: ".$weight;
 echo "<br/>";
 
@@ -50,13 +53,25 @@ $mult = $height * $height;
 
 $BMI = $weight / $mult;
 echo "Your BMI is ".$BMI;
-echo "<br/>";
+echo "<br>";
+
+// Testei seu cálculo com outro calculador de IMC, e tá funcionando!
 
 $category = "";
 
+/* 
+
+==== Debug ==== 
+
+Aqui eu testo valor a valor, sobrescrevendo o cálculo acima
+simulando CADA RESULTADO pra ver exatamente onde está o erro.
+
+*/
+$BMI = 15.1; // Variável sobrescrita apenas para debugar
+
 if($BMI < 15.0) {
 	$category = "very severely underweight";
-} elseif($BMI <= 15.0 && $BMI >= 16.0) {
+} elseif($BMI <= 15.0 && $BMI >= 16.0) { // <- ele deveria entrar aqui. ONDE ESTÁ O MISTÉRIO?
 	$category = "severely underweight";
 } elseif($BMI <= 16.1 && $BMI >= 18.4) {
 	$category = "underweight";

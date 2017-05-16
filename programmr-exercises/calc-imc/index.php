@@ -9,7 +9,7 @@
 <body>
 	<div class="container">
 		<h2>Calculadora de IMC</h2>
-		<hr/>
+		<hr>
 		
 		<form method="POST" action="calculo.php">
 			<div class="form-group">
