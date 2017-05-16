@@ -38,14 +38,17 @@ exit;
 
 $BMI = 0;
 
-//$height = $_POST['height'];
-$height = 1.84; //aqui tem um debug pra testar se o cálculo tá funcionando
+$height = $_POST['height'];
+//$height = 1.84; //aqui tem um debug pra testar se o cálculo tá funcionando
 
-echo "Your height in meters is: ".$height;
+// Converte cm em metros:
+$height = $height / 100;
+
+echo "Your height in meters is: ". $height;
 echo "<br/>";
 
-//$weight = $_POST['weight'];
-$weight = 70; //aqui também
+$weight = $_POST['weight'];
+//$weight = 70; //aqui também
 echo "Your weight in kilogram is: ".$weight;
 echo "<br/>";
 
@@ -67,10 +70,10 @@ Aqui eu testo valor a valor, sobrescrevendo o cálculo acima
 simulando CADA RESULTADO pra ver exatamente onde está o erro.
 
 */
-$BMI = 40.0; // Variável sobrescrita apenas para debugar
+//$BMI = 40.0; // Variável sobrescrita apenas para debugar
 
 if($BMI < 15.0) {
-	
+
 	$category = "very severely underweight";
 
 } elseif($BMI >= 15.0 && $BMI <= 16.0) { 
