@@ -8,11 +8,15 @@ include('includes/header.html'); // Deixe o conteúdo fora da sua aplicação
 
 
 /*
-Se o usuário não está logado, ou seja a chave 'id' do array não foi setada.
+Se o usuário não está logado, ou seja a chave 'logado' do array de sessão não foi setada.
 então, redireciona de volta para a página de login
+
+É importante que essa chave no array da session para controle seja configurada por VOCÊ.
+
+Te explico melhor depois se quiesr
 */
 
-if(!isset($_SESSION['id'])) {
+if(!isset($_SESSION['logado'])) {
 	session_destroy(); // Destrua a sessão, just in case! ;)
 	header("Location: login.php");
 }

@@ -3,16 +3,33 @@ session_start();
 
 require 'config.php';
 
-if(isset($_POST['email']) && empty($_POST['senha']) == false) {
-	$email = addslashes($_POST['email']);
-	$senha = md5(addslashes($_POST['senha']));
+/*
+Se a o campo 'email' E o campo 'senha' não estiverem vazios,
+encaminha o login. Lembre que num formulário essas variáveis SEMPRE estarão setadas
+*/
 
-	$db = new PDO($dsn, $dbuser, $dbpass);
-	$sql = $db->query("SELECT email, senha FROM usuarios WHERE email = '$email' AND senha = '$senha'");
+if(!empty($_POST['email']) && !empty($_POST['senha'])) {
+	$email = addslashes($_POST['email']);
+	$senha = addslashes($_POST['senha']); // <- há um mistério aqui para você resolver, por isso tirei o md5()
+
+	/*
+	- Vc já tinha setado uma variável $pdo no 'config.php'. Não precisa fazer de novo.
+	- Não precisa selecionar a senha do banco. Apenas as infos do usuário
+	*/ 
+	$sql = $pdo->query("SELECT id, email FROM usuarios WHERE email = '$email' AND senha = '$senha'");
 	
 	if($sql->rowCount() > 0) {
-		$dado = $sql->fetch();
-		$_SESSION['id'] = $dado['id'];
+		// Nome mais fácil de lembrar do que 'dado'
+		$user = $sql->fetch(PDO::FETCH_ASSOC); // Puxe como array associativo!
+		//var_dump($user);
+		# Registrando sessão!
+		$_SESSION['id'] = $user['id'];
+		$_SESSION['email'] = $user['email'];
+		
+		# Te explico isso aqui com calma se quiser depois
+		$_SESSION['logado'] = 'TRUE'; 
+		# Tudo certo, redireciona pro nosso painel!
+		//var_dump($_SESSION);
 		header("Location: painel.php");
 	}
 }
