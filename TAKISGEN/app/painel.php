@@ -1,18 +1,30 @@
 <?php
+session_start(); // Session sempre antes de tudo!
+
 require 'config.php';
+include('includes/header.html'); // Deixe o conteúdo fora da sua aplicação
+
+# ｡･:*:･ﾟ★,｡･:*:･ﾟ☆　LOGIN MAGIC GOES HERE　 ｡･:*:･ﾟ★,｡･:*:･ﾟ☆ #
+
+
+/*
+Se o usuário não está logado, ou seja a chave 'logado' do array de sessão não foi setada.
+então, redireciona de volta para a página de login
+
+É importante que essa chave no array da session para controle seja configurada por VOCÊ.
+
+Te explico melhor depois se quiesr
+*/
+
+if(!isset($_SESSION['logado'])) {
+	session_destroy(); // Destrua a sessão, just in case! ;)
+	header("Location: login.php");
+}
+
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<meta charset="UTF-8">
-	<title>Frases</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/font awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-</head>
 
-<body>
+
 <div class="container">
 
 	<h1>Frases...</h1>
@@ -96,7 +108,6 @@ DB: frases/ tabela: usuarios/ campos: id, email, senha
 	<span><i class="fa fa-heart-o" aria-hidden="true"></i> THE END <i class="fa fa-code" aria-hidden="true"></i></span>
 </footer>
 
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-
-</body>
-</html>  
+<?php
+include('includes/footer.html'); // Deixe o conteúdo fora da sua aplicação
+?>
