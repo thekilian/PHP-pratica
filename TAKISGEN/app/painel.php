@@ -1,6 +1,22 @@
 <?php
+session_start(); // Session sempre antes de tudo!
+
 require 'config.php';
 include('includes/header.html'); // Deixe o conteúdo fora da sua aplicação
+
+# ｡･:*:･ﾟ★,｡･:*:･ﾟ☆　LOGIN MAGIC GOES HERE　 ｡･:*:･ﾟ★,｡･:*:･ﾟ☆ #
+
+
+/*
+Se o usuário não está logado, ou seja a chave 'id' do array não foi setada.
+então, redireciona de volta para a página de login
+*/
+
+if(!isset($_SESSION['id'])) {
+	session_destroy(); // Destrua a sessão, just in case! ;)
+	header("Location: login.php");
+}
+
 ?>
 
 
