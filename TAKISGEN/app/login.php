@@ -13,8 +13,8 @@ if(isset($_POST['email']) && empty($_POST['senha']) == false) {
 	if($sql->rowCount() > 0) {
 		$dado = $sql->fetch();
 		$_SESSION['id'] = $dado['id'];
-			header("Location: painel.php");
-		}
+		header("Location: painel.php");
+	}
 }
 ?>
 
@@ -28,17 +28,20 @@ if(isset($_POST['email']) && empty($_POST['senha']) == false) {
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-<div class="container">
-	<h1>Login</h1>
-	<hr>
+	<div class="container">
+		<div class="col-lg-6 col-lg-offset-3">
+			
+			<h1>Login</h1>
+			<hr>
 
-	<div class="form-group">
-		<form method="POST">
-			<input class="form-control" type="email" name="email" placeholder="Digite seu e-mail" required=""><br>
-			<input class="form-control" type="password" name="senha" placeholder="Digite sua senha" required=""><br>
-			<button class="btn btn-success btn-block">Entrar</button>
-		</form>
+			<div class="form-group">
+				<form method="POST">
+					<input class="form-control" type="email" name="email" placeholder="Digite seu e-mail" required=""><br>
+					<input class="form-control" type="password" name="senha" placeholder="Digite sua senha" required=""><br>
+					<button class="btn btn-success btn-block">Entrar</button>
+				</form>
+			</div>
+		</div>
 	</div>
-</div>
 </body>
 </html>
