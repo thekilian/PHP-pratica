@@ -1,18 +1,10 @@
 <?php
 require 'config.php';
+include('includes/header.html'); // Deixe o conteúdo fora da sua aplicação
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<meta charset="UTF-8">
-	<title>Frases</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/font awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-</head>
 
-<body>
+
 <div class="container">
 
 	<h1>Frases...</h1>
@@ -96,7 +88,6 @@ DB: frases/ tabela: usuarios/ campos: id, email, senha
 	<span><i class="fa fa-heart-o" aria-hidden="true"></i> THE END <i class="fa fa-code" aria-hidden="true"></i></span>
 </footer>
 
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-
-</body>
-</html>  
+<?php
+include('includes/footer.html'); // Deixe o conteúdo fora da sua aplicação
+?>
