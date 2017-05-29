@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 17-Maio-2017 às 17:56
+-- Generation Time: 29-Maio-2017 às 17:17
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -28,17 +28,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `senha` varchar(20) NOT NULL,
+  `senha` varchar(32) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `email`, `senha`) VALUES
-(1, 'renatakilian@yahoo.com.br', 'adm17');
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`) VALUES
+(1, 'Re', 'renatakilian@yahoo.com.br', 'adm17'),
+(2, 'Teste', 'teste@teste.com', '123');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
