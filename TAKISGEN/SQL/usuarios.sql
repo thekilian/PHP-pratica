@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Maio-2017 às 17:17
+-- Generation Time: 29-Maio-2017 às 18:03
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `nome` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `senha` varchar(32) NOT NULL,
+  `cor` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
@@ -38,9 +39,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`) VALUES
-(1, 'Re', 'renatakilian@yahoo.com.br', 'adm17'),
-(2, 'Teste', 'teste@teste.com', '123');
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `cor`) VALUES
+(1, 'Nao', 'nao@teste.com', '123', 'azul'),
+(2, 'Teste', 'teste@teste.com', '123', 'verde');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
