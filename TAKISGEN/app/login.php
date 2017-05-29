@@ -19,7 +19,7 @@ if(!empty($_POST['email']) && !empty($_POST['senha'])) {
 	//$db = new PDO($dsn, $dbuser, $dbpass); // não precisa fazer de novo
 	*/ 
 	
-	$sql = $pdo->query("SELECT id, nome, email FROM usuarios WHERE nome = '$nome' AND email = '$email' AND senha = '$senha'");
+	$sql = $pdo->query("SELECT id, nome, email FROM usuarios WHERE email = '$email' AND senha = '$senha'");
 	
 	if($sql->rowCount() > 0) {
 		// Nome mais fácil de lembrar do que 'dado'
