@@ -159,14 +159,14 @@ if(!isset($_SESSION['logado'])) {
                                 <i class="fa fa-fw fa-comments"></i>
                             </div>
                             <div class="mr-5">
-								<?php
-									$sql = "SELECT id, frase, autor FROM lista ORDER BY RAND() LIMIT 1";
-									$result = $pdo->query($sql);
+				<?php
+					$sql = "SELECT id, frase, autor FROM lista ORDER BY RAND() LIMIT 1";
+					$result = $pdo->query($sql);
 
-									$chosen_one = $result->fetch(PDO::FETCH_ASSOC);
+					$chosen_one = $result->fetch(PDO::FETCH_ASSOC);
 
-									echo "{$chosen_one['frase']} <br> <strong>{$chosen_one['autor']}</strong>";
-								?>
+					echo "{$chosen_one['frase']} <br> <strong>{$chosen_one['autor']}</strong>";
+				?>
                             </div>
                         </div>
                         <a href="#" class="card-footer clearfix small z-1">
@@ -207,13 +207,13 @@ if(!isset($_SESSION['logado'])) {
                             <div class="mr-5">
                                 (n° frases cadastradas)
                                 <?php
-$sql = "SELECT COUNT(*) AS num_phrases FROM lista";
-$result = $pdo->query($sql);
-$total = $result->fetch(PDO::FETCH_ASSOC);
+					$sql = "SELECT COUNT(*) AS num_phrases FROM lista";
+					$result = $pdo->query($sql);
+					$total = $result->fetch(PDO::FETCH_ASSOC);
 
-//var_dump($total);
+					//var_dump($total);
 
-echo $total['num_phrases']." frases cadastradas"; // Vc tava dando echo num array
+					echo $total['num_phrases']." frases cadastradas"; // Vc tava dando echo num array
                                 ?>
                             </div>
                         </div>
@@ -236,15 +236,13 @@ echo $total['num_phrases']." frases cadastradas"; // Vc tava dando echo num arra
                             <div class="mr-5">
                                 (n° usuários cadastrados)
                                 <?php
-$sql = "SELECT COUNT(*) AS users FROM usuarios";
+					$sql = "SELECT COUNT(*) AS users FROM usuarios";
+					$result = $pdo->query($sql);
+					$total = $result->fetch(PDO::FETCH_ASSOC);
 
-$result = $pdo->query($sql);
+					//var_dump($total);
 
-$total = $result->fetch(PDO::FETCH_ASSOC);
-
-//var_dump($total);
-
-echo $total['users']." usuários cadastradas"; // Aqui também
+					echo $total['users']." usuários cadastradas"; // Aqui também
                                 ?>
                             </div>
                         </div>
@@ -604,21 +602,21 @@ echo $total['users']." usuários cadastradas"; // Aqui também
                                 </tr>
                             </tfoot>
                             <tbody>
-							<?php
-								$sql = "SELECT * FROM lista";
-								$sql = $pdo->query($sql);
-								if($sql->rowCount() > 0) {
-									foreach ($sql->fetchAll() as $phrase) {
-										echo '<tr>';
-										echo '<td>'.$phrase['frase'].'</td>';
-										echo '<td>'.$phrase['autor'].'</td>';
-										echo '<td><a href="update.php?id='.$phrase['id'].'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>';
-										echo '<td><a href="delete.php?id='.$phrase['id'].'"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>';
-										echo '</tr>';
-									}
-								}
-							?>
-							</tbody>
+				<?php
+					$sql = "SELECT * FROM lista";
+					$sql = $pdo->query($sql);
+					if($sql->rowCount() > 0) {
+						foreach ($sql->fetchAll() as $phrase) {
+							echo '<tr>';
+							echo '<td>'.$phrase['frase'].'</td>';
+							echo '<td>'.$phrase['autor'].'</td>';
+							echo '<td><a href="update.php?id='.$phrase['id'].'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>';
+							echo '<td><a href="delete.php?id='.$phrase['id'].'"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>';
+							echo '</tr>';
+						}
+					}
+				?>
+			    </tbody>
                         </table>
                     </div>
                 </div>
@@ -653,21 +651,21 @@ echo $total['users']." usuários cadastradas"; // Aqui também
                                 </tr>
                             </tfoot>
                             <tbody>
-							<?php
-								$sql = "SELECT * FROM usuarios";
-								$sql = $pdo->query($sql);
-								if($sql->rowCount() > 0) {
-									foreach ($sql->fetchAll() as $user) {
-										echo '<tr>';
-										echo '<td>'.$user['nome'].'</td>';
-										echo '<td>'.$user['email'].'</td>';
-										echo '<td><a href="update.php?id='.$user['id'].'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>';
-										echo '<td><a href="delete.php?id='.$user['id'].'"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>';
-										echo '</tr>';
-									}
-								}
-							?>
-							</tbody>
+				<?php
+					$sql = "SELECT * FROM usuarios";
+					$sql = $pdo->query($sql);
+					if($sql->rowCount() > 0) {
+						foreach ($sql->fetchAll() as $user) {
+							echo '<tr>';
+							echo '<td>'.$user['nome'].'</td>';
+							echo '<td>'.$user['email'].'</td>';
+							echo '<td><a href="update.php?id='.$user['id'].'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>';
+							echo '<td><a href="delete.php?id='.$user['id'].'"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>';
+							echo '</tr>';
+						}
+					}
+				?>
+			    </tbody>
                         </table>
                     </div>
                 </div>
