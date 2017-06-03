@@ -6,7 +6,7 @@ include('includes/header.html'); // Deixe o conteúdo fora da sua aplicação
 
 # ｡･:*:･ﾟ★,｡･:*:･ﾟ☆　LOGIN MAGIC GOES HERE　 ｡･:*:･ﾟ★,｡･:*:･ﾟ☆ #
 /*
-Se o usuário não está logado, ou seja a chave 'logado' do array de sessão não foi setada.
+Se o usuário não está http://localhost/PHP-pratica/TAKISGEN/app/logado, ou seja a chave 'logado' do array de sessão não foi setada.
 então, redireciona de volta para a página de login
 É importante que essa chave no array da session para controle seja configurada por VOCÊ.
 Te explico melhor depois se quiesr
@@ -134,7 +134,7 @@ if(!isset($_SESSION['logado'])) {
                 -->
 
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php session_destroy();?>"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
+                    <a class="nav-link" href="<?php 	?>"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
                 </li>
             </ul>
         </div>
@@ -159,12 +159,12 @@ if(!isset($_SESSION['logado'])) {
                                 <i class="fa fa-fw fa-comments"></i>
                             </div>
                             <div class="mr-5">
-								<?php	
+								<?php
 									$sql = "SELECT id, frase, autor FROM lista ORDER BY RAND() LIMIT 1";
 									$result = $pdo->query($sql);
-													
+
 									$chosen_one = $result->fetch(PDO::FETCH_ASSOC);
-													
+
 									echo "{$chosen_one['frase']} <br> <strong>{$chosen_one['autor']}</strong>";
 								?>
                             </div>
@@ -172,7 +172,7 @@ if(!isset($_SESSION['logado'])) {
                         <a href="#" class="card-footer clearfix small z-1">
                             <span class="float-left">Ver próxima</span>
 
-<!--Ver como faz para clicar no "Ver próxima" e aparecer a próxima frase no espaço (como se fosse um atualizar)--> 
+<!--Ver como faz para clicar no "Ver próxima" e aparecer a próxima frase no espaço (como se fosse um atualizar)-->
 
                             <span class="float-right"><i class="fa fa-angle-right"></i></span>
                         </a>
@@ -211,9 +211,9 @@ $sql = "SELECT COUNT(*) AS num_phrases FROM lista";
 $result = $pdo->query($sql);
 $total = $result->fetch(PDO::FETCH_ASSOC);
 
-var_dump($total);
+//var_dump($total);
 
-echo $total." frases cadastradas";
+echo $total['num_phrases']." frases cadastradas"; // Vc tava dando echo num array
                                 ?>
                             </div>
                         </div>
@@ -239,12 +239,12 @@ echo $total." frases cadastradas";
 $sql = "SELECT COUNT(*) AS users FROM usuarios";
 
 $result = $pdo->query($sql);
-    
+
 $total = $result->fetch(PDO::FETCH_ASSOC);
 
-var_dump($total);
+//var_dump($total);
 
-//echo $total." usuários cadastradas";
+echo $total['users']." usuários cadastradas"; // Aqui também
                                 ?>
                             </div>
                         </div>
@@ -260,7 +260,7 @@ var_dump($total);
                 </div>
             </div>
 
-            <!-- Area Chart Example 
+            <!-- Area Chart Example
             <div class="card mb-3">
                 <div class="card-header">
                     <i class="fa fa-area-chart"></i> Area Chart Example
@@ -451,7 +451,7 @@ var_dump($total);
                         </div>
                         -->
 
-                        <!-- Example Social Card 
+                        <!-- Example Social Card
                         <div class="card mb-3">
                             <a href="#">
                                 <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=185" alt="">
@@ -690,7 +690,7 @@ var_dump($total);
                     </div>
                 </div>
 				-->
-				
+
                 <div class="card-footer small text-muted">
                     Updated yesterday at 11:59 PM
                 </div>
