@@ -74,15 +74,10 @@ check_login();
                                 <i class="fa fa-fw fa-shopping-cart"></i>
                             </div>
                             <div class="mr-5">
-                                (n° frases cadastradas)
+                                <h3> Frases cadastradas </h3>
                                 <?php
-					$sql = "SELECT COUNT(*) AS num_phrases FROM lista";
-					$result = $pdo->query($sql);
-					$total = $result->fetch(PDO::FETCH_ASSOC);
-
-					//var_dump($total);
-
-					echo $total['num_phrases']." frases cadastradas"; // Vc tava dando echo num array
+								$num_frases = get_total_frases($pdo);
+								echo $num_frases." frases cadastradas"; // Vc tava dando echo num array
                                 ?>
                             </div>
                         </div>
@@ -103,16 +98,13 @@ check_login();
                                 <i class="fa fa-fw fa-support"></i>
                             </div>
                             <div class="mr-5">
-                                (n° usuários cadastrados)
+                                <h3> Usuários cadastrados </h3>
                                 <?php
-					$sql = "SELECT COUNT(*) AS users FROM usuarios";
-					$result = $pdo->query($sql);
-					$total = $result->fetch(PDO::FETCH_ASSOC);
 
-					//var_dump($total);
+								$total = get_total_users($pdo);
+								echo $total." usuários cadastradas"; // Aqui também
 
-					echo $total['users']." usuários cadastradas"; // Aqui também
-                                ?>
+								?>
                             </div>
                         </div>
 
