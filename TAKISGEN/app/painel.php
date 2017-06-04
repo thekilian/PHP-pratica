@@ -1,9 +1,10 @@
 <?php
 session_start(); // Session sempre antes de tudo!
 
-require 'config.php';
-require ('includes/functions.php');
+require ('includes/functions.php'); // Funções assessoras
+require ('includes/db_functions.php'); // Funções de manipulação de dados
 
+// Conteúdo estático!! :)assessoras
 include('includes/header.html'); // Deixe o conteúdo fora da sua aplicação
 // O menu também é conteúdo estático. Pode ser um arquivo externo.
 include ('includes/sidebar.html');
@@ -32,11 +33,7 @@ check_login();
                             </div>
                             <div class="mr-5">
 				<?php
-					$sql = "SELECT id, frase, autor FROM lista ORDER BY RAND() LIMIT 1";
-					$result = $pdo->query($sql);
-
-					$chosen_one = $result->fetch(PDO::FETCH_ASSOC);
-
+					$chosen_one = get_random_phrase($pdo);
 					echo "{$chosen_one['frase']} <br> <strong>{$chosen_one['autor']}</strong>";
 				?>
                             </div>

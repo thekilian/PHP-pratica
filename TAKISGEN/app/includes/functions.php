@@ -4,9 +4,6 @@
 É uma boa prática colocar as funções do sistema num arquivo separado (isso é um INÍCIO de MVC)
 */
 
-
-
-
 # ｡･:*:･ﾟ★,｡･:*:･ﾟ☆　LOGIN MAGIC GOES HERE　 ｡･:*:･ﾟ★,｡･:*:･ﾟ☆ #
 /*
 Se o usuário não está http://localhost/PHP-pratica/TAKISGEN/app/logado, ou seja a chave 'logado' do array de sessão não foi setada.
