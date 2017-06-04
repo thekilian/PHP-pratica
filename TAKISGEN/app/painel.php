@@ -2,28 +2,15 @@
 session_start(); // Session sempre antes de tudo!
 
 require 'config.php';
+require ('includes/functions.php');
+
 include('includes/header.html'); // Deixe o conteúdo fora da sua aplicação
-
-# ｡･:*:･ﾟ★,｡･:*:･ﾟ☆　LOGIN MAGIC GOES HERE　 ｡･:*:･ﾟ★,｡･:*:･ﾟ☆ #
-/*
-Se o usuário não está http://localhost/PHP-pratica/TAKISGEN/app/logado, ou seja a chave 'logado' do array de sessão não foi setada.
-então, redireciona de volta para a página de login
-É importante que essa chave no array da session para controle seja configurada por VOCÊ.
-Te explico melhor depois se quiesr
-*/
-if(!isset($_SESSION['logado'])) {
-	session_destroy(); // Destrua a sessão, just in case! ;)
-	header("Location: login.php");
-}
-
-?>
-
-<!-- Navigation -->
-<?php
 // O menu também é conteúdo estático. Pode ser um arquivo externo.
 include ('includes/sidebar.html');
 
+check_login();
 ?>
+
 
     <div class="content-wrapper py-3">
 
