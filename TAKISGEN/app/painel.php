@@ -18,36 +18,12 @@ if(!isset($_SESSION['logado'])) {
 
 ?>
 
-    <!-- Navigation -->
-    <nav id="mainNav" class="navbar static-top navbar-toggleable-md navbar-inverse bg-inverse">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">Painel Frases</a>
-        <div class="collapse navbar-collapse" id="navbarExample">
-            <ul class="sidebar-nav navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#frases"><i class="fa fa-fw fa-table"></i> Frases</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#usuarios"><i class="fa fa-fw fa-user-o"></i> Usuários</a>
-                </li>
+<!-- Navigation -->
+<?php
+// O menu também é conteúdo estático. Pode ser um arquivo externo.
+include ('includes/sidebar.html');
 
-
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-
-
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php 	?>"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+?>
 
     <div class="content-wrapper py-3">
 
