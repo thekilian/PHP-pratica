@@ -43,7 +43,7 @@ if(!empty($_POST['email']) && !empty($_POST['senha'])) {
 ?>
 
 <?php
-	include ('includes/header.html');
+	include ('includes/header.php');
 ?>
 
 <div class="container">
@@ -60,7 +60,7 @@ if(!empty($_POST['email']) && !empty($_POST['senha'])) {
 </div>
 
 <?php
-	include ('includes/footer.html');
+	include ('includes/footer.php');
 ?>
 
 </body>

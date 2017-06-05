@@ -5,7 +5,7 @@ require ('../includes/functions.php'); // Funções assessoras
 require ('../includes/db_functions.php'); // Funções de manipulação de dados
 
 // Conteúdo estático!! :)
-include('../includes/header.html'); // Deixe o conteúdo fora da sua aplicação
+include('../includes/header.php'); // Deixe o conteúdo fora da sua aplicação
 // O menu também é conteúdo estático. Pode ser um arquivo externo.
 include ('../includes/sidebar.html');
 
@@ -251,8 +251,5 @@ check_login();
     </a>
 
 <?php
-include('includes/footer.html');
+include('includes/footer.php');
 ?>
-
-</body>
-</html>
