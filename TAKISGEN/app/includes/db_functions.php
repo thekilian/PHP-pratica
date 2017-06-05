@@ -6,6 +6,17 @@
 //Se aqui o banco trabalha, importante fazer as configs do banco aqui:
 require 'config.php';
 
+/*
+Vamos deixar as configurações só onde deve ser configuração
+e lógica só onde é lógica?
+*/
+
+try {
+	$pdo = new PDO($dsn, $dbuser, $dbpass);
+} catch(PDOException $e) {
+	echo "Falhou a conexão: ".$e->getMessage();
+}
+
 // Busca uma frase aleatória no banco
 function get_random_phrase($pdo_conn){
     $sql = "SELECT id, frase, autor FROM lista ORDER BY RAND() LIMIT 1";
