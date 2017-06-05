@@ -1,6 +1,7 @@
 <?php
 session_start(); // Session sempre antes de tudo!
 
+require ('../includes/config.php'); // Configuração volta pra cá!
 require ('../includes/functions.php'); // Funções assessoras
 require ('../includes/db_functions.php'); // Funções de manipulação de dados
 
@@ -251,5 +252,5 @@ check_login();
     </a>
 
 <?php
-include('includes/footer.php');
+include('../includes/footer.php');
 ?>
