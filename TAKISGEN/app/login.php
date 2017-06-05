@@ -37,7 +37,7 @@ if(!empty($_POST['email']) && !empty($_POST['senha'])) {
 		# Tudo certo, redireciona pro nosso painel!
 		//var_dump($_SESSION);
 
-			header("Location: painel.php");
+			header("Location: painel/index.php");
 		}
 }
 ?>
