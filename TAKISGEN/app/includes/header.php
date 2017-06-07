@@ -11,12 +11,6 @@
     <meta name="author" content="">
     <title>Painel Frases</title>
 
-    <!--Antigo CSS:
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/font awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/css/style.css">
-	-->
-
     <!-- Bootstrap core CSS -->
     <link href="<?= $system_url ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
