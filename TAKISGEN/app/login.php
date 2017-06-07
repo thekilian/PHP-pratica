@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require 'config.php';
+require 'includes/config.php';
 
 /*
 Se a o campo 'email' e o campo 'senha' não estiverem vazios,
@@ -17,10 +17,10 @@ if(!empty($_POST['email']) && !empty($_POST['senha'])) {
 	- Não precisa selecionar a senha do banco. Apenas as infos do usuário
 
 	//$db = new PDO($dsn, $dbuser, $dbpass); // não precisa fazer de novo
-	*/ 
-	
+	*/
+
 	$sql = $pdo->query("SELECT id, nome, email, cor FROM usuarios WHERE email = '$email' AND senha = '$senha'");
-	
+
 	if($sql->rowCount() > 0) {
 		// Nome mais fácil de lembrar do que 'dado'
 		//$dado = $sql->fetch();
@@ -33,17 +33,17 @@ if(!empty($_POST['email']) && !empty($_POST['senha'])) {
 		$_SESSION['cor'] = $user['cor'];
 
 		# Te explico isso aqui com calma se quiser depois
-		$_SESSION['logado'] = 'TRUE'; 
+		$_SESSION['logado'] = 'TRUE';
 		# Tudo certo, redireciona pro nosso painel!
 		//var_dump($_SESSION);
 
-			header("Location: painel.php");
+			header("Location: painel/index.php");
 		}
 }
 ?>
 
 <?php
-	include ('includes/header.html');
+	include ('includes/header.php');
 ?>
 
 <div class="container">
@@ -60,7 +60,7 @@ if(!empty($_POST['email']) && !empty($_POST['senha'])) {
 </div>
 
 <?php
-	include ('includes/footer.html');
+	include ('includes/footer.php');
 ?>
 
 </body>

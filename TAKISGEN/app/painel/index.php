@@ -1,13 +1,14 @@
 <?php
 session_start(); // Session sempre antes de tudo!
 
-require ('includes/functions.php'); // Funções assessoras
-require ('includes/db_functions.php'); // Funções de manipulação de dados
+require ('../includes/config.php'); // Configuração volta pra cá!
+require ('../includes/functions.php'); // Funções assessoras
+require ('../includes/db_functions.php'); // Funções de manipulação de dados
 
-// Conteúdo estático!! :)assessoras
-include('includes/header.html'); // Deixe o conteúdo fora da sua aplicação
+// Conteúdo estático!! :)
+include('../includes/header.php'); // Deixe o conteúdo fora da sua aplicação
 // O menu também é conteúdo estático. Pode ser um arquivo externo.
-include ('includes/sidebar.html');
+include ('../includes/sidebar.html');
 
 check_login();
 ?>
@@ -251,8 +252,5 @@ check_login();
     </a>
 
 <?php
-include('includes/footer.html');
+include('../includes/footer.php');
 ?>
-
-</body>
-</html>

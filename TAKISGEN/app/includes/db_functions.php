@@ -2,9 +2,16 @@
 /*
 == Arquivo com funções no banco de dados ==
 */
-
-//Se aqui o banco trabalha, importante fazer as configs do banco aqui:
-require 'config.php';
+/*
+Vamos deixar as configurações só onde deve ser configuração
+e lógica só onde é lógica?
+*/
+// Isso aqui ainda vai ficar melhor hohohohoho
+try {
+	$pdo = new PDO($dsn, $dbuser, $dbpass);
+} catch(PDOException $e) {
+	echo "Falhou a conexão: ".$e->getMessage();
+}
 
 // Busca uma frase aleatória no banco
 function get_random_phrase($pdo_conn){
