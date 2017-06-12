@@ -3,9 +3,9 @@ session_start();
 if(isset($_SESSION['id']) && empty($_SESSION['id']) == false) {
 	//echo "Área restrita";
 	header("Location: login.php");
-} else {
-	echo "não deu"; //apenas para teste :)
-}
+} //else {
+	//echo "não deu"; //apenas para teste :)
+//}
 
 /*
 Se usuário não tá logado, direcionar para login (não precisa do else)
