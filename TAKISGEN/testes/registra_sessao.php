@@ -6,7 +6,7 @@
 Retirado de várias partes do código, não precisa implementar essa parte
  */
 // Reutilizando nosso config.php inclusive nos testes! ;)
-require '../app/includes/config.php';
+require '../app/config.php';
 
 try {
 	$pdo = new PDO($dsn, $dbuser, $dbpass);
