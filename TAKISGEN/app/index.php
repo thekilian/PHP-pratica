@@ -1,5 +1,5 @@
 <?php
-require 'includes/config.php';
+require 'config.php';
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ require 'includes/config.php';
 	$chosen_one = $result->fetch(PDO::FETCH_ASSOC);
 
 	// descomente essa linha abaixo para ver como vieram os dados
-	//var_dump($chosen_one);
+	var_dump($chosen_one);
 
 	/*
 	Um jeito mais elegante de escrever strings no PHP
