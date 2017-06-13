@@ -6,6 +6,8 @@
 Vamos deixar as configurações só onde deve ser configuração
 e lógica só onde é lógica?
 */
+require 'config.php';
+
 // Isso aqui ainda vai ficar melhor hohohohoho
 try {
 	$pdo = new PDO($dsn, $dbuser, $dbpass);
