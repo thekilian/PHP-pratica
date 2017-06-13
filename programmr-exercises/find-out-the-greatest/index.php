@@ -1,4 +1,4 @@
-<!-- HTML:
+<!--
 Find out the greatest
 http://www.programmr.com/practice/phpcourse_sandbox_1971/node/2052
 
@@ -72,7 +72,4 @@ Output:
       echo "The largest number is :".$num3; 
     }
   }
-
-  //echo "The largest number is :".$largest;   
-  //exit; 
 ?>
