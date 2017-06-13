@@ -56,7 +56,7 @@ if(isset($_POST['key'])) {
 		} else {
 			echo "<strong>small letter</strong>";
 		}		
-	}  elseif(is_numeric($key)) {
+	}  elseif(ctype_digit($key)) {
 		echo "<strong>number</strong>";		
 	} else {
 		echo "<strong>special symbol</strong>";
