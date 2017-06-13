@@ -53,7 +53,6 @@ Output:
 </html>
 
 <?php
-  $largest = 0;
 
   $num1 = $_POST['num1'];
   $num2 = $_POST['num2'];
