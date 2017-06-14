@@ -1,4 +1,4 @@
-/*
+<!--
 Space Boxing
 http://www.programmr.com/practice/phpcourse_sandbox_1971/node/2056
 
@@ -21,8 +21,7 @@ I have information for the following planets:
 Which planet are you visiting:2
 Your weight would be 49.92 pounds on that planet.
 
-<?php
-
+#PHP
 echo"Please enter your current earth weight(in pounds):";
 $weight = trim(fgets(STDIN));
 
@@ -33,5 +32,84 @@ $planet = trim(fgets(STDIN));
 // {write ur logic here
  
 //}
-?>
-*/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Space Boxing</title>
+</head>
+<body>
+	<form method="POST">
+		<label>Please enter your current earth weight(in pounds):</label><br/>
+		<input type="number" name="weight" placeholder="Your weight (in pounds)"><br/><br/>
+		<label>I have information for the following planets :<br/>
+			1.Venus   2.Mars   3.Jupiter   4.Saturn   5.Uranus   6.Neptune<br/>
+			Which planet are you visiting?
+		</label><br/>
+		<input type="number" name="planet" placeholder="Enter the planet number"><br/><br/>
+		<input type="submit" value="Check"><br/><br/>
+	</form>
+	<hr/>
+</body>
+</html>
+
+<?php
+
+//$weight = $_POST['weight'];
+//$planet = $_POST['planet'];
+
+//echo "Your current earth weight(in pounds) is: ".$weight;
+//echo "<br/>";
+
+if(isset($_POST) && !empty($_POST)) {
+	$weight = $_POST['weight'];
+	$planet = $_POST['planet'];
+
+	echo "Your current earth weight (in pounds) is: ".$weight;
+	echo "<br/>";
+	
+	switch ($planet) {
+		case '1':
+			echo "The planet you are visiting is #1: Venus";
+			echo "<br/>";
+			echo "Your weight would be ".$weight * 0.78." pounds on Venus.";
+			break;
+
+		case '2':
+			echo "The planet you are visiting is #2: Mars";
+			echo "<br/>";
+			echo "Your weight would be ".$weight * 0.39." pounds on Mars.";
+			break;
+
+		case '3':
+			echo "The planet you are visiting is #3: Jupiter";
+			echo "<br/>";
+			echo "Your weight would be ".$weight * 2.65." pounds on Jupiter.";
+			break;
+
+		case '4':
+			echo "The planet you are visiting is #4: Saturn";
+			echo "<br/>";
+			echo "Your weight would be ".$weight * 1.17." pounds on Saturn.";
+			break;
+
+		case '5':
+			echo "The planet you are visiting is #5: Uranus";
+			echo "<br/>";
+			echo "Your weight would be ".$weight * 1.05." pounds on Uranus.";
+			break;
+
+		case '6':
+			echo "The planet you are visiting is #6: Neptune";
+			echo "<br/>";
+			echo "Your weight would be ".$weight * 1.23." pounds on Neptune.";
+			break;
+
+		default:
+			echo "Please choose a planet number between 1 and 6";
+			echo "<br/>";
+			break;
+	}
+}
