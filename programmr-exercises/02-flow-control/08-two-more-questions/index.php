@@ -67,7 +67,7 @@ $b=trim(fgets(STDIN));
 </html>
 
 <?php
-if(isset($_POST['where']) && isset($_POST['alive'])) {
+if(isset($_POST) && !empty($_POST)) {
 	$where = $_POST['where'];
 	$alive = $_POST['alive'];
 

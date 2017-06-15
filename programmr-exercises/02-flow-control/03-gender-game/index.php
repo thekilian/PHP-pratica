@@ -78,7 +78,7 @@ echo "Your name is: ".$name."<br/>";
 echo "Your last name is: ".$last."<br/>";
 echo "Your age is: ".$age."<br/>";
 
-if(isset($_POST['gender'])) {
+if(isset($_POST) && !empty($_POST)) {
   if($_POST['gender'] == 'F' && $_POST['age'] >= 20) {
     echo "<label>Are you married (Y or N)?</label> <input type='text' name='married' required> <input type='submit' value='?'>";
       if(isset($_POST['married'])) {

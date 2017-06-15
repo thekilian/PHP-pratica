@@ -1,4 +1,4 @@
-/*
+<!--
 Age in five years
 http://www.programmr.com/practice/phpcourse_sandbox_1971/node/2028
 
@@ -9,8 +9,7 @@ Hi Percy_Bysshe_Shelley! How old are you?34
 Did you know that in five years you will be 39 years old?
 And five years ago you were29! Imagine that!
 
-<?php 
-  
+#PHP  
 echo "Hello. What is your name?:";
  
 $Name = trim(fgets(STDIN));
@@ -18,6 +17,4 @@ $Name = trim(fgets(STDIN));
 //{ write your code here
 
 //}
-
-?>
-*/
+-->

@@ -53,22 +53,21 @@ Output:
 </html>
 
 <?php
-
+if(isset($_POST['num1']) /*&& (isset($_POST['num2']) && (isset($_POST['num3'])*/) {
   $num1 = $_POST['num1'];
   $num2 = $_POST['num2'];
   $num3 = $_POST['num3'];
 
-  echo "Your 1st number is: ".$num1."<br/>";   
+  echo "Your 1st number is: ".$num1."<br/>";
   echo "Your 2nd number is: ".$num2."<br/>";
   echo "Your 3rd number is: ".$num3."<br/>";
 
-  if(isset($_POST)) {
-    if($num1 > $num2 && $num1 > $num3) { 
-      echo "The largest number is :".$num1;
-    } elseif($num2 > $num1 && $num2 > $num3) { 
-      echo "The largest number is :".$num2; 
-    } else { 
-      echo "The largest number is :".$num3; 
-    }
+  if($num1 > $num2 && $num1 > $num3) { 
+    echo "The largest number is :".$num1;
+  } elseif($num2 > $num1 && $num2 > $num3) { 
+    echo "The largest number is :".$num2; 
+  } else { 
+    echo "The largest number is :".$num3; 
   }
+}
 ?>
