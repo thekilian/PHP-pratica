@@ -62,9 +62,7 @@ Then I will call you John Moretz
 </body>
 </html>
 
-<?php
-$finalName;
-  
+<?php  
 $gender = $_POST['gender'];
 $name = $_POST['name'];
 $last = $_POST['last'];
