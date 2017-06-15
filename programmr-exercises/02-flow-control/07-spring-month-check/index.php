@@ -48,24 +48,17 @@ if(isset($_POST[]) && !empty($_POST)) {
 	$day = $_POST['day'];
 
 	if($month <= 1 && $month >= 12) {
-		echo "Month OK!";
+		//echo "Month OK!"; //teste
 	}
 
 	if($day <= 1 && $day >= 31) {
-		echo "Day ok!";
+		//echo "Day ok!"; //teste
 	}
 }
-
-
-	
-
 
 //var_dump($_POST);
 
 ?>
 <!--
 March 20 (inclusive) and June 20 (inclusive) is Spring time
-1 2 = Not spring time
-3 4 5 6 = 20/3 - 2/6 = Spring time
-7 8 9 10 11 12 = Not spring time
 -->
