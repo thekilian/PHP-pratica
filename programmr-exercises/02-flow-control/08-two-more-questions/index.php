@@ -7,7 +7,7 @@ Two More Questions Using if statements with compound conditions (like &&), make 
 Question 1: Does it belong inside or outside or both?
 Question 2: Is it alive?
  	
-			| inside			| outside	| both
+		| inside		| outside	| both
 alive		| houseplant		| bison		| dog
 not alive	| shower curtain	| billboard	| cell phone
 
@@ -90,25 +90,4 @@ if(isset($_POST) && !empty($_POST)) {
 	}
 
 }
-
-/*
-if(isset($_POST['alive']) && isset($_POST['where'])) {
-	$alive = $_POST['alive'];
-	$where = $_POST['where'];
-	
-	if($alive = 'yes' && $where == 'inside') {
-		echo "Obviously the living thing on your mind is a houseplant!";
-	} elseif($alive = 'yes' && $where == 'outside') {
-		echo "Obviously the living thing on your mind is a bison!";
-	} elseif($alive = 'yes' && $where == 'both') {
-		echo "Obviously the living thing on your mind is a dog!";
-	} elseif($alive = 'no' && $where == 'inside') {
-		echo "Obviously the nonliving thing on your mind is a shower curtain!";
-	} elseif($alive = 'no' && $where == 'outside') {
-		echo "Obviously the nonliving thing on your mind is a billboard!";
-	} elseif($alive = 'no' && $where == 'both') {
-		echo "Obviously the nonliving thing on your mind is a cell phone!";
-	}
-}
-*/
 ?>
