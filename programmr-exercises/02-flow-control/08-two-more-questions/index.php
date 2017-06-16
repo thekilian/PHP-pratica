@@ -78,7 +78,7 @@ if(isset($_POST) && !empty($_POST)) {
 		} elseif($where == 'outside') {
 			echo "Obviously the living thing on your mind is a bison!";
 		} else {
-			echo "Obviously the living thing on your mind is a dog!";
+			echo "Obviously the living thing inside/outside on your mind is a dog!";
 		}
 	} else {
 		if($where == 'inside') {
@@ -86,7 +86,7 @@ if(isset($_POST) && !empty($_POST)) {
 		} elseif($where == 'outside') {
 			echo "Obviously the nonliving thing on your mind is a billboard!";
 		} else {
-			echo "Obviously the nonliving thing on your mind is a cell phone!";
+			echo "Obviously the nonliving thing inside/outside on your mind is a cell phone!";
 		}
 	}
 
