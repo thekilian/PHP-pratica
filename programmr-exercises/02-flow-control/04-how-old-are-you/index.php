@@ -51,9 +51,7 @@ $age = trim(fgets(STDIN));
 
 <?php
 
-
-
-if(isset($_POST['age'])) {
+if(isset($_POST) && !empty($_POST)) {
 	$name = $_POST['name'];
 	$age = $_POST['age'];
 	
