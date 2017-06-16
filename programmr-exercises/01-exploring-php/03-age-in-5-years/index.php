@@ -18,3 +18,32 @@ $Name = trim(fgets(STDIN));
 
 //}
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Age in 5 years</title>
+</head>
+<body>
+	<form method="POST">
+		<label>Hello. What is your name?</label><br/>
+		<input type="text" name="name" placeholder="Your name" required><br/><br/>
+		<label>How old are you?</label><br/>
+		<input type="number" name="age" placeholder="Your age" required><br/><br/>
+		<input type="submit" value="Age in 5 years"><br/>
+	</form>
+	<hr/>
+</body>
+</html>
+
+<?php
+$name = $_POST['name'];
+$age = $_POST['age'];
+$future = $age + 5;
+$past = $age - 5;
+
+echo "Did you know that in five years you will be ".$future." years old?"."<br/>";
+echo "And five years ago you were ".$past."! Imagine that!";
+
+?>
