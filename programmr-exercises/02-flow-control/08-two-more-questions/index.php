@@ -63,6 +63,7 @@ $b=trim(fgets(STDIN));
 		<input type="text" name="alive"><br/><br/>
 		<input type="submit" value="Check"><br/><br/>
 	</form>
+	<hr/>
 </body>
 </html>
 
@@ -71,7 +72,7 @@ if(isset($_POST) && !empty($_POST)) {
 	$where = $_POST['where'];
 	$alive = $_POST['alive'];
 
-	if($alive = 'yes') {
+	if($alive == 'yes') {
 		if($where == 'inside') {
 			echo "Obviously the living thing on your mind is a houseplant!";
 		} elseif($where == 'outside') {
