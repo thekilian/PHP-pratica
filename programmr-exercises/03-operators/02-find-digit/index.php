@@ -20,3 +20,43 @@ $answer=0;
   echo $answer;
   exit;
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Find digit in unit place</title>
+</head>
+<body>
+	<form method="POST">
+		<label>Enter number:</label><br/>
+		<input type="number" name="number" placeholder="Enter your number here" required/><br/><br/>
+		<input type="submit" value="Check the last digit"/>
+	</form>
+	<hr/>
+</body>
+</html>
+
+<?php
+if(isset($_POST) && !empty($_POST)) {
+	$answer = 0;
+	$number = $_POST['number'];
+
+	echo "Your number is: ".$number;
+	echo "<br/>";
+
+	if($number < 0) {
+		$answer = "-".substr($number, -1);
+		echo "The answer is: ".$answer;
+	} else {
+		$answer = substr($number, -1); 
+		echo "The answer is: ".$answer;
+	}
+	
+	//if(is_float($number)) { //para float - exercício pede para mostrar o primeiro número antes do ponto, mas está mostrando o último
+		//$answer = substr($number, 0, 1);
+		//echo "The answer is: ".$answer;
+	//}
+
+	exit;
+?>
