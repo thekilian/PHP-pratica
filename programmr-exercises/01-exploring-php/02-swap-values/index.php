@@ -9,8 +9,6 @@ Enter the 2nd number:12
 2nd Number:48
 
 #PHP
-
-<?php 
    echo "Enter the 1st Number:";
    $number1 = trim(fgets(STDIN));
 
@@ -28,5 +26,38 @@ Enter the 2nd number:12
   echo "\n";
   echo "2nd Number:".$number2;
   exit;
-?>
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Swap the values of two variables</title>
+</head>
+<body>
+  <form method="POST">
+    <label>Enter the 1st number:</label><br/>
+    <input type="number" name="number1" required><br/><br/>
+    <label>Enter the 2nd number:</label><br/>
+    <input type="number" name="number2" required><br/><br/>
+    <input type="submit" value="Swap it"><br/><br/>
+  </form>
+  <hr/>
+</body>
+</html>
+
+<?php
+$number1 = $_POST['number2'];
+$number2 = $_POST['number1'];
+
+/* Se não tiver "POST":
+  $temp = $number1;
+  $number1 = $number2;
+  $number2 = $temp;
+*/
+
+echo "1st Number:".$number1;
+echo "<br/>";
+echo "2nd Number:".$number2;
+
+?>
