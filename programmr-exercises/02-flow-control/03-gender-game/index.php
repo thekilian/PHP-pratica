@@ -63,20 +63,21 @@ Then I will call you John Moretz
 </html>
 
 <?php  
-$gender = $_POST['gender'];
-$name = $_POST['name'];
-$last = $_POST['last'];
-$age = $_POST['age'];
-$married = $_POST['married'];
-
-var_dump($_POST);
-
-echo "Your gender is: ".$gender."<br/>";
-echo "Your name is: ".$name."<br/>";
-echo "Your last name is: ".$last."<br/>";
-echo "Your age is: ".$age."<br/>";
-
 if(isset($_POST) && !empty($_POST)) {
+
+  $gender = $_POST['gender'];
+  $name = $_POST['name'];
+  $last = $_POST['last'];
+  $age = $_POST['age'];
+  $married = $_POST['married'];
+
+  //var_dump($_POST);
+
+  echo "Your gender is: ".$gender."<br/>";
+  echo "Your name is: ".$name."<br/>";
+  echo "Your last name is: ".$last."<br/>";
+  echo "Your age is: ".$age."<br/>";
+
   if($_POST['gender'] == 'F' && $_POST['age'] >= 20) {
     echo "<label>Are you married (Y or N)?</label> <input type='text' name='married' required> <input type='submit' value='?'>";
       if(isset($_POST['married'])) {
@@ -88,7 +89,9 @@ if(isset($_POST) && !empty($_POST)) {
           echo "Then I will call you Ms. ".$last;
         }
       }
-  } elseif ($_POST['gender'] == 'M' && $_POST['age'] >= 20) {
+  } 
+
+  if ($_POST['gender'] == 'M' && $_POST['age'] >= 20) {
     echo "<label>Are you married (Y or N)?</label> <input type='text' name='married' required> <input type='submit' value='?'>";
       if(isset($_POST['married'])) {
         if($_POST['married'] == 'Y') {

@@ -43,20 +43,20 @@ Not Spring
 </html>
 
 <?php
-if(isset($_POST[]) && !empty($_POST)) {
+if(isset($_POST) && !empty($_POST)) {
 	$month = $_POST['month'];
 	$day = $_POST['day'];
 
-	if($month <= 1 && $month >= 12) {
-		//echo "Month OK!"; //teste
-	}
-
-	if($day <= 1 && $day >= 31) {
-		//echo "Day ok!"; //teste
-	}
+	//if($month <= 1 && $month >= 12) {
+		echo "Month is: ".$month; //teste
+	//}
+		echo "<br/>";
+	//if($day <= 1 && $day >= 31) {
+		echo "Day is: ".$day; //teste
+	//}
 }
 
-//var_dump($_POST);
+var_dump($_POST);
 
 ?>
 <!--
