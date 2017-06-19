@@ -23,10 +23,50 @@ Total Salary-5450
      
     //{Write down your logic here
      
-     
-     
-     
-
      //} 
    exit;
 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Gross Salary Check</title>
+</head>
+<body>
+	<form method="POST">
+		<label>Enter salary:</label><br/>
+		<input type="number" name="salary" placeholder="Your salary" required/><br/><br/>
+		<input type="submit" value="Check"/>
+	</form>
+	<hr/>
+</body>
+</html>
+
+<?php
+
+$hra = 0;
+$da = 0;
+$total = 0;
+
+if(isset($_POST['salary']) && !empty($_POST['salary'])) {
+	$salary = $_POST['salary'];
+
+	if($salary < 1500) {
+		$hra = ($salary * 10) / 100;
+		$da = ($salary * 90) / 100;
+
+		$total = $salary + $hra + $da;
+
+		echo "Total Salary-".$total;
+
+	} elseif($salary >= 1500) {
+		$hra = 500;
+		$da = ($salary * 98) / 100;
+
+		$total = $salary + $hra + $da;
+
+		echo "Total Salary-".$total;
+	}
+}
+exit;
+?>
