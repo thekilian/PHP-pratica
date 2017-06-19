@@ -30,7 +30,7 @@ $answer=0;
 <body>
 	<form method="POST">
 		<label>Enter number:</label><br/>
-		<input type="number" name="number" placeholder="Enter your number here" required/><br/><br/>
+		<input type="number" step="any" name="number" placeholder="Enter your number here" required/><br/><br/>
 		<input type="submit" value="Check the last digit"/>
 	</form>
 	<hr/>
@@ -53,10 +53,10 @@ if(isset($_POST) && !empty($_POST)) {
 		echo "The answer is: ".$answer;
 	}
 	
-	//if(is_float($number)) { //para float - exercício pede para mostrar o primeiro número antes do ponto, mas está mostrando o último
-		//$answer = substr($number, 0, 1);
-		//echo "The answer is: ".$answer;
-	//}
-
+	if(is_float($number)) { //para float - exercício pede para mostrar o primeiro número antes do ponto, mas está mostrando o último
+		$answer = substr($number, 0, 1);
+		echo "The answer is: ".$answer;
+	}
+}
 	exit;
 ?>
