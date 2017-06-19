@@ -21,12 +21,37 @@ output: odd
   
      //{  
      //write down your logic here  
-         
-         
-         
-          
-  
+
      //}   
   
   exit;
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Even and odd numbers</title>
+</head>
+<body>
+	<form method="POST">
+		<label>Enter the number:</label><br/>
+		<input type="number" name="number" placeholder="Enter the number" required/><br/><br/>
+		<input type="submit" value="Even or odd?"/>
+	</form>
+	<hr/>
+</body>
+</html>
+
+<?php
+if(isset($_POST['number']) && !empty($_POST['number'])) {
+	$number = $_POST['number'];
+
+	if($number % 2 == 0) {
+		echo "even";
+	} else {
+		echo "odd";
+	}
+}
+exit;
+?>
