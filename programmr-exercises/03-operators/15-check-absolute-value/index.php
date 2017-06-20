@@ -19,12 +19,47 @@ $ans = "false";
    $number2=trim(fgets(STDIN));
      
      //{Write down your logic here
-    
-    
-    
-    
-    
+
      //} 
   echo $ans;
   exit;
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Check the absolute value</title>
+</head>
+<body>
+  <form method="POST">
+    <label>Enter the 1st number:</label><br/>
+    <input type="number" step="any" name="number1" placeholder="Enter the 1st number" required/><br/><br/>
+
+    <label>Enter the 2nd number:</label><br/>
+    <input type="number" step="any" name="number2" placeholder="Enter the 2nd number" required/><br/><br/>
+
+    <input type="submit" value="Check"/>
+  </form>
+  <hr/>
+</body>
+</html>
+
+<?php
+
+$ans = "false";
+
+if(isset($_POST) && !empty($_POST)) {
+  $number1 = $_POST['number1'];
+  $number2 = $_POST['number2'];
+
+  if(abs($number1) == abs($number2)) {
+  	$ans = "true";
+  } else {
+  	$ans = "false";
+  }
+
+}
+echo $ans;
+exit;
+?>
