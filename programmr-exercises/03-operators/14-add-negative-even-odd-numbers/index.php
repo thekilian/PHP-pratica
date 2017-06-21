@@ -22,12 +22,6 @@ echo "Enter the numbers (0 to terminate):";
 
 //Write your code here{
 
-
-
-
-
-
-
 //}
 echo "Sum of negative numbers = ".$negative_sum."
 Sum of positive even numbers = ".$even_sum."
@@ -35,3 +29,53 @@ Sum of positive odd numbers = ".$odd_sum ;
 
 exit;
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Add negative, even & odd numbers from a list</title>
+</head>
+<body>
+	<form method="POST">
+		<label>Enter number:</label><br/>
+		<input type="number" name="number" placeholder="Enter number" required/><br/><br/>
+
+		<input type="submit" value="Calculate"/>
+	</form>
+	<hr/>
+</body>
+</html>
+
+<?php
+
+$negative_sum = 0;
+$even_sum = 0;
+$odd_sum = 0;
+
+if(isset($_POST) && !empty($_POST)) {
+	$number = $_POST['number'];
+	//como receber vários números sem saber a quantidade total?
+
+	if($number < 0) {
+		$negative_sum = $number + $number;
+	} else {
+		if($number % 2 == 0) { 
+			$even_sum = $number + $number; //even
+		} else {
+			$odd = $number + $number; //odd
+		}
+	}
+
+	if($number == 0) {
+		exit; //como encerrar lista de números quando usuário digitar "0" e rodar sistema a partir daí?
+	}
+}
+
+echo "Sum of negative numbers = ".$negative_sum."
+Sum of positive even numbers = ".$even_sum."
+Sum of positive odd numbers = ".$odd_sum ;
+
+exit;
+?>
+
