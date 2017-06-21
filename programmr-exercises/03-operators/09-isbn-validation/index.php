@@ -19,59 +19,14 @@ echo "Enter ISBN number:";
 $isbn=trim(fgets(STDIN)); 
 //{Write your code here
 
+
+
+
+
+
+
+
+
 //}
   exit;
 -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>ISBN Validation</title>
-</head>
-<body>
-	<form method="POST">
-		<label>Enter ISBN number:</label><br/>
-		<input type="number" name="isbn" placeholder="Enter number" required/><br/><br/>
-		<input type="submit" value="Check"/>
-	</form>
-	<hr/>
-</body>
-</html>
-
-<?php
-if(isset($_POST['isbn']) && !empty($_POST['isbn'])) {
-	$isbn = $_POST['isbn'];
-
-	$digit1 = substr($isbn, -1, 1);
-	$digit2 = substr($isbn, -2, 1);
-	$digit3 = substr($isbn, -3, 1);
-	$digit4 = substr($isbn, -4, 1);
-	$digit5 = substr($isbn, -5, 1);
-	$digit6 = substr($isbn, -6, 1);
-	$digit7 = substr($isbn, -7, 1);
-	$digit8 = substr($isbn, -8, 1);
-	$digit9 = substr($isbn, -9, 1);
-	$digit10 = substr($isbn, -10, 1);
-
-	$d1 = 1 * $digit1;
-	$d2 = 2 * $digit2;
-	$d3 = 3 * $digit3;
-	$d4 = 4 * $digit4;
-	$d5 = 5 * $digit5;
-	$d6 = 6 * $digit6;
-	$d7 = 7 * $digit7;
-	$d8 = 8 * $digit8;
-	$d9 = 9 * $digit9;
-	$d10 = 10 * $digit10;
-
-	$sum = $d1 + $d2 + $d3 + $d4 + $d5 + $d6 + $d7 + $d8 + $d9 + $d10;
-
-	if($sum % 11 == 0) {
-	    echo "Valid";    
-	} else {
-	    echo "Not Valid";
-	}
-
-}
-exit;
