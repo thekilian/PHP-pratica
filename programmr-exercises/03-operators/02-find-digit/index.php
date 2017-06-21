@@ -46,10 +46,10 @@ if(isset($_POST) && !empty($_POST)) {
 	echo "<br/>";
 
 	if($number < 0) {
-		$answer = "-".substr($number, -1);
+		$answer = "-".substr($number, -1, 1);
 		echo "The answer is: ".$answer;
 	} else {
-		$answer = substr($number, -1); 
+		$answer = substr($number, -1, 1); 
 		echo "The answer is: ".$answer;
 	}
 	
