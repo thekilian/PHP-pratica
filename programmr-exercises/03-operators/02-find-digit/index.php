@@ -11,12 +11,9 @@ $answer=0;
    echo "Enter Number:";
    $number = trim(fgets(STDIN));
 
-     
-     //{Write down your logic here
+    //{Write down your logic here
 
-
-
-     //} 
+    //} 
   echo $answer;
   exit;
 -->
