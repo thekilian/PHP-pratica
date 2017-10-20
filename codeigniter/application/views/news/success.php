@@ -1,0 +1,1 @@
+<h3>Success! News added!</h3>
