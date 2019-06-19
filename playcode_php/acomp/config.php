@@ -1,7 +1,7 @@
 <?php
 $dsn = "mysql:dbname=projeto_acomp;host=localhost";
 $dbuser = "root";
-$dbpass = "";
+$dbpass = "pass";
 
 try {
  	$pdo = new PDO($dsn, $dbuser, $dbpass);
